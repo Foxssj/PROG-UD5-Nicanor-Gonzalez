@@ -48,12 +48,12 @@ public class Dictionary {
 
     }
 
-    public void deleteWord(String newWord) {
-        String word = newWord.toLowerCase();
+    public void deleteWord(String deleteWord) {
+        String word = deleteWord.toLowerCase();
         String letter = String.valueOf(word.charAt(0));
         Set<String> list = this.words.get(letter);
 
-        if (words.containsKey(letter)) {
+        if (words.containsKey(letter) && list.contains(word)) {
             list.remove(word);
             System.out.println("Word deleted succesfully");
             if (list.size() == 0) {
